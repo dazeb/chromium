@@ -4681,6 +4681,14 @@ should be able to be added at any place in this file.
   </description>
 </action>
 
+<action name="Autofill_PolledLoyaltyCardSuggestions">
+  <owner>vizcay@google.com</owner>
+  <description>
+    This user action is logged when the user interacts with an autofillable
+    loyalty card field field, either by clicking or by typing.
+  </description>
+</action>
+
 <action name="Autofill_PolledProfileSuggestions">
   <owner>battre@chromium.org</owner>
   <description>
@@ -6649,7 +6657,7 @@ should be able to be added at any place in this file.
 
 <action name="ChromeOS.AppInstallDialog.AppLaunched">
   <owner>brettw@chromium.org</owner>
-  <owner>cros-web-apps-team@google.com</owner>
+  <owner>lt-web-apps-team@google.com</owner>
   <description>
     Recorded when the user requested a previously installed app to be launched
     in the CrOS App Install dialog.
@@ -6658,7 +6666,7 @@ should be able to be added at any place in this file.
 
 <action name="ChromeOS.AppInstallDialog.Cancelled">
   <owner>brettw@chromium.org</owner>
-  <owner>cros-web-apps-team@google.com</owner>
+  <owner>lt-web-apps-team@google.com</owner>
   <description>
     Recorded when the user closed an installation dialog without installing.
   </description>
@@ -6666,7 +6674,7 @@ should be able to be added at any place in this file.
 
 <action name="ChromeOS.AppInstallDialog.Installed">
   <owner>brettw@chromium.org</owner>
-  <owner>cros-web-apps-team@google.com</owner>
+  <owner>lt-web-apps-team@google.com</owner>
   <description>
     Recorded when the user requested an app to be installed in the CrOS App
     Install dialog.
@@ -6675,7 +6683,7 @@ should be able to be added at any place in this file.
 
 <action name="ChromeOS.AppInstallDialog.Shown">
   <owner>brettw@chromium.org</owner>
-  <owner>cros-web-apps-team@google.com</owner>
+  <owner>lt-web-apps-team@google.com</owner>
   <description>
     Recorded when the CrOS App Install dialog was opened by the user.
   </description>
@@ -36306,6 +36314,77 @@ should be able to be added at any place in this file.
   <description>
     Reported when user taps on the button that opens the Chrome panel in
     Settings.app. iOS only.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.CheckboxesShowMoreClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;Show more&quot; button in the Clear Browsing Data
+    dialog to reveal more options.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.CookiesSignOutLinkClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;Sign out&quot; link within the sub-label of the
+    &quot;Cookies and other site data&quot; checkbox in the Clear Browsing Data
+    dialog.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.GoogleSearchHistoryLinkClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;Search History&quot; link in the &quot;Other Google
+    data&quot; dialog.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.MyActivityLinkClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;My Activity&quot; link in the &quot;Other Google
+    data&quot; dialog.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.OtherDataEntryPointClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;Manage other Google data&quot; or &quot;Manage
+    other data&quot; link row in the Clear Browsing Data dialog.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.PasswordManagerLinkClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;Password Manager&quot; link in the &quot;Other
+    Google data&quot; dialog.
+  </description>
+</action>
+
+<action name="Settings.DeleteBrowsingData.TimePickerMoreClick">
+  <owner>hkamila@google.com</owner>
+  <owner>zalmashni@chromium.org</owner>
+  <owner>chrome-browser-privacy-team@google.com</owner>
+  <description>
+    User clicks on the &quot;More&quot; button in the time period picker of the
+    Clear Browsing Data dialog to reveal more time range options.
   </description>
 </action>
 

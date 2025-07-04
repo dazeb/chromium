@@ -28,7 +28,7 @@ AffiliationCategoryMetricBucket AffiliationCategoriesToMetricBucket(
   if (affiliation_categories.empty()) {
     return AffiliationCategoryMetricBucket::kNone;
   }
-  if (affiliation_categories.size() > 1) {
+  if (affiliation_categories.size() > 1u) {
     return AffiliationCategoryMetricBucket::kMixed;
   }
   switch (*affiliation_categories.begin()) {
@@ -56,7 +56,6 @@ std::string_view GetAffiliationCategoriesSuffix(
 
 }  // namespace
 
-// TODO(crbug.com/422366498): Complete the class implementation.
 LoyaltyCardFormEventLogger::LoyaltyCardFormEventLogger(
     BrowserAutofillManager* owner)
     : FormEventLoggerBase("LoyaltyCard", owner) {}
@@ -93,7 +92,10 @@ void LoyaltyCardFormEventLogger::OnDidFillSuggestion(
   card_categories_filled_.insert(loyalty_card.GetAffiliationCategory(url));
 }
 
-void LoyaltyCardFormEventLogger::RecordPollSuggestions() {}
+void LoyaltyCardFormEventLogger::RecordPollSuggestions() {
+  base::RecordAction(
+      base::UserMetricsAction("Autofill_PolledLoyaltyCardSuggestions"));
+}
 
 void LoyaltyCardFormEventLogger::RecordParseForm() {
   base::RecordAction(base::UserMetricsAction("Autofill_ParsedLoyaltyCardForm"));

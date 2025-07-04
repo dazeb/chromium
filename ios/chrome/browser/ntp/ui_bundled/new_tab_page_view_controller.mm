@@ -4,6 +4,7 @@
 
 #import "ios/chrome/browser/ntp/ui_bundled/new_tab_page_view_controller.h"
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 #import <algorithm>
@@ -23,6 +24,7 @@
 #import "ios/chrome/browser/ntp/ui_bundled/discover_feed_constants.h"
 #import "ios/chrome/browser/ntp/ui_bundled/feed_header_view_controller.h"
 #import "ios/chrome/browser/ntp/ui_bundled/feed_wrapper_view_controller.h"
+#import "ios/chrome/browser/ntp/ui_bundled/new_tab_page_color_palette.h"
 #import "ios/chrome/browser/ntp/ui_bundled/new_tab_page_constants.h"
 #import "ios/chrome/browser/ntp/ui_bundled/new_tab_page_content_delegate.h"
 #import "ios/chrome/browser/ntp/ui_bundled/new_tab_page_feature.h"
@@ -186,6 +188,8 @@ CGFloat SpaceBetweenModules() {
   // The view controller holding the NTP quick actions buttons.
   // Only created when the fakebox buttons are replaced.
   NewTabPageQuickActionsViewController* _quickActionsViewController;
+  // Whether MIA is allowed by policy.
+  BOOL _MIAAllowedByPolicy;
 }
 
 // Properties synthesized from NewTabPageConsumer.
@@ -824,8 +828,12 @@ CGFloat SpaceBetweenModules() {
   [self updateBackgroundImageView];
 }
 
-- (void)applyBaseBackgroundColor:(UIColor*)color {
+- (void)updateBackgroundWithColorPalette:(NewTabPageColorPalette*)colorPalette {
   // TODO(crbug.com/421925819): Apply color palette to NTP UI elements.
+}
+
+- (void)setMIAAllowedByPolicy:(BOOL)policyAllowed {
+  _MIAAllowedByPolicy = policyAllowed;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -1092,7 +1100,7 @@ CGFloat SpaceBetweenModules() {
 // Whether the quick actions button row is visible.
 - (BOOL)quickActionsVisible {
   return self.headerViewController.isGoogleDefaultSearchEngine &&
-         ShouldShowQuickActionsRow();
+         ShouldShowQuickActionsRow() && _MIAAllowedByPolicy;
 }
 
 // Returns YES if scroll should be skipped when focusing the omnibox.

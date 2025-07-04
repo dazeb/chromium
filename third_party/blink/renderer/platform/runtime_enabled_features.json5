@@ -2347,6 +2347,10 @@
       status: "experimental",
     },
     {
+      name: "FontMatchAliasesAsLastResort",
+      status: "stable",
+    },
+    {
       name: "FontPresentWin",
       status: "stable",
     },
@@ -2863,6 +2867,12 @@
     },
     {
       name: "ListOwnerMustHaveCSSBox",
+      status: "stable",
+    },
+    {
+      // Enabling this changes the `list-style-position` quirk to match the
+      // HTML standard spec.
+      name: "ListStylePositionQuirkStandard",
       status: "stable",
     },
     {
@@ -4201,7 +4211,7 @@
     },
     {
       name: "SecurePaymentConfirmationBrowserBoundKeys",
-      status: "experimental",
+      status: "stable",
     },
     {
       name: "SecurePaymentConfirmationDebug",
@@ -5647,11 +5657,6 @@
     // no problems are encountered.
     {
       name: "WindowDefaultStatus",
-    },
-    {
-      name: "WindowOnMoveEvent",
-      status: "experimental",
-      implied_by: ["DesktopPWAsAdditionalWindowingControls"],
     },
     {
       name: "XMLSerializerConsistentDefaultNsDeclMatching",

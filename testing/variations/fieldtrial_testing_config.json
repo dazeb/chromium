@@ -428,21 +428,6 @@
             ]
         }
     ],
-    "AddAddressManually": [
-        {
-            "platforms": [
-                "ios"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "AddAddressManually"
-                    ]
-                }
-            ]
-        }
-    ],
     "AddSuggestStrongPasswordFromAddPassword": [
         {
             "platforms": [
@@ -2707,6 +2692,26 @@
                     "name": "Enabled",
                     "enable_features": [
                         "AutofillSaveCardBottomSheet"
+                    ]
+                }
+            ]
+        }
+    ],
+    "AutofillServerUploadMoreData": [
+        {
+            "platforms": [
+                "android",
+                "chromeos",
+                "ios",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "AutofillServerUploadMoreData"
                     ]
                 }
             ]
@@ -12164,21 +12169,6 @@
             ]
         }
     ],
-    "IOSChooseFromDriveSimulatedClick": [
-        {
-            "platforms": [
-                "ios"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "IOSChooseFromDriveSimulatedClick"
-                    ]
-                }
-            ]
-        }
-    ],
     "IOSChromnientEscapeHatch": [
         {
             "platforms": [
@@ -20225,6 +20215,7 @@
                     "enable_features": [
                         "AvoidCloneArgsOnExtensionFunctionDispatch",
                         "AvoidUnnecessaryGetMinimizeButtonOffset",
+                        "AvoidUnnecessaryShouldRenderRichAnimation",
                         "ReducePPMs",
                         "ScreenWinDisplayLookupByHMONITOR"
                     ]
@@ -24529,6 +24520,9 @@
                     "name": "RetryOnly",
                     "enable_features": [
                         "PageAllocatorRetryOnCommitFailure"
+                    ],
+                    "disable_features": [
+                        "TerminationTargetPolicy"
                     ]
                 },
                 {

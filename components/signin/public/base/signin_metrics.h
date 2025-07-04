@@ -290,10 +290,12 @@ enum class AccessPoint : int {
   kNonModalSigninPasswordPromo = 83,
   // iOS only: Access point for the contextual non modal sign-in bookmark promo.
   kNonModalSigninBookmarkPromo = 84,
+  // Access point for the user manager with a prefilled email.
+  kUserManagerWithPrefilledEmail = 85,
   // Add values above this line with a corresponding label to the
   // "SigninAccessPoint" enum in
   // tools/metrics/histograms/metadata/signin/enums.xml.
-  kMaxValue = kNonModalSigninBookmarkPromo,  // This must be last.
+  kMaxValue = kUserManagerWithPrefilledEmail,  // This must be last.
 };
 // LINT.ThenChange(/tools/metrics/histograms/metadata/signin/enums.xml)
 
@@ -606,6 +608,8 @@ enum class SigninAccountType {
 };
 
 // Event within the reauth flow.
+//
+// LINT.IfChange(ReauthFlowEvent)
 enum class ReauthFlowEvent : int {
   // The reauth flow has started.
   kStarted = 0,
@@ -619,6 +623,19 @@ enum class ReauthFlowEvent : int {
   kInterrupted = 4,
   kMaxValue = kInterrupted
 };
+// LINT.ThenChange(//tools/metrics/histograms/metadata/signin/histograms.xml:ReauthFlowEvent)
+
+// Identifies explicit reauthentication UI entry points.
+//
+// These values are persisted to logs. Entries should not be renumbered and
+// numeric values should never be reused.
+// LINT.IfChange(ReauthAccessPoint)
+enum class ReauthAccessPoint : int {
+  // Error card in the account menu.
+  kAccountMenu = 0,
+  kMaxValue = kAccountMenu,
+};
+// LINT.ThenChange(//tools/metrics/histograms/metadata/signin/enums.xml:ReauthAccessPoint)
 #endif  // BUILDFLAG(IS_IOS)
 
 // -----------------------------------------------------------------------------
@@ -735,6 +752,12 @@ void RecordSignoutConfirmationFromDataLossAlert(
 // suffix for `Signin.Reauth.InSigninFlow` histogram family.
 void RecordReauthFlowEventInSigninFlow(signin_metrics::AccessPoint access_point,
                                        ReauthFlowEvent event);
+
+// Records the progression of the reauthentication flow that was started via an
+// explicit reauthentication UI. `event` is converted into a suffix for
+// `Signin.Reauth.InSigninFlow` histogram family.
+void RecordReauthFlowEventInExplicitFlow(ReauthAccessPoint access_point,
+                                         ReauthFlowEvent event);
 #endif  // BUILDFLAG(IS_IOS)
 
 // Records the total number of open tabs at the moment of signin or enabling

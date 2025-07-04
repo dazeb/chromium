@@ -7839,6 +7839,13 @@ Called by update_use_counter_css.py.-->
   <int value="868" label="corners"/>
   <int value="869" label="border-shape"/>
   <int value="870" label="animation-trigger-behavior"/>
+  <int value="871" label="timeline-trigger-name"/>
+  <int value="872" label="timeline-trigger-behavior"/>
+  <int value="873" label="timeline-trigger-range-start"/>
+  <int value="874" label="timeline-trigger-range-end"/>
+  <int value="875" label="timeline-trigger-exit-range-start"/>
+  <int value="876" label="timeline-trigger-exit-range-end"/>
+  <int value="877" label="timeline-trigger-timeline"/>
 </enum>
 
 <!-- LINT.ThenChange(//third_party/blink/public/mojom/use_counter/metrics/css_property_id.mojom:CSSSampleId) -->
