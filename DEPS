@@ -377,7 +377,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling CrossBench
   # and whatever else without interference from each other.
-  'crossbench_revision': 'c6c9659c7c6ef06d7dccf0084f02f5ec8fe3157e',
+  'crossbench_revision': '14f259df55dcd5187548b34532485a4c387469c5',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling CrossBench
   # and whatever else without interference from each other.
@@ -421,7 +421,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling feed
   # and whatever else without interference from each other.
-  'dawn_revision': '629fed7f42e7ea6d398abca7f1bec55ff77c852c',
+  'dawn_revision': '6a657c46e557cba6c87711a84751d3541613c11b',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling feed
   # and whatever else without interference from each other.
@@ -537,7 +537,7 @@ vars = {
 
   # If you change this, also update the libc++ revision in
   # //buildtools/deps_revisions.gni.
-  'libcxx_revision':       '1cd4ad8d27d77b11c3780a27854a1c2b8670c969',
+  'libcxx_revision':       'bbe8cef9fbc00a4dfbaca9c2c69487caa0ba5f91',
 
   # GN CIPD package version.
   'gn_version': 'git_revision:07d3c6f4dc290fae5ca6152ebcb37d6815c411ab',
@@ -1190,7 +1190,7 @@ deps = {
       'packages': [
           {
               'package': 'chromium/chrome/android/orderfiles/arm',
-              'version': 'nS-IE2FppGwjbCH3mw6vrtv1FAt1WEMaNwrri4wvQSkC',
+              'version': 'zqt9SGjpeV79MV_stsjtDXsj02igzzKtYX_JH88cwhUC',
           },
       ],
       'condition': 'checkout_android and non_git_source',
@@ -1201,7 +1201,7 @@ deps = {
       'packages': [
           {
               'package': 'chromium/chrome/android/orderfiles/arm64',
-              'version': 'AkoW5O2AXJQdbkTmRAcCWPSLd1sS1oHBSPNbdaLN4ooC',
+              'version': '2NELO09xWTV9a4UFdupbUKCXKwcOrJnO1WI-ySBxK-EC',
           },
       ],
       'condition': 'checkout_android and non_git_source',
@@ -1223,7 +1223,7 @@ deps = {
       'packages': [
           {
               'package': 'chromium/android_webview/tools/orderfiles/arm64',
-              'version': 'R3MM7tRh9mj5it3ZhYloHW4kgC3rhsNBryZktQVNIKAC',
+              'version': 'M-POYzIccV_RYixinLt8SxSttdzciBaU_SRqfGFAZkIC',
           },
       ],
       'condition': 'checkout_android and non_git_source',
@@ -3164,7 +3164,7 @@ deps = {
     'packages': [
       {
         'package': 'chromeos_internal/apps/projector_app/app',
-        'version': '7EVYLFmmfSM-HfriMY1E_ct_xu31lXCnNbc4sOivVeAC',
+        'version': '-F3zpgOQHCWOtXbz_y12cohwpWeVVUqtlTBH2C7WffIC',
       },
     ],
     'condition': 'checkout_chromeos and checkout_src_internal',
@@ -3757,7 +3757,7 @@ deps = {
 
   'src/ios_internal':  {
       'url': Var('chrome_git') + '/chrome/ios_internal.git' + '@' +
-        '0e433a2147c4082200e737c293d288d7d3ef79e1',
+        '9fb2a759a4be0d909e4bc982b11ac405a27300ef',
       'condition': 'checkout_ios and checkout_src_internal',
   },
 
